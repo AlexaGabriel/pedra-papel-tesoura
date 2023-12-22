@@ -38,7 +38,7 @@ export default function Home() {
           <Image
             priority={true}
             src="/Tesoura.jpeg"
-            sizes="18.665vw"
+            sizes="18vw"
             style={{
               width: '100%',
               height: '100%',
@@ -52,7 +52,7 @@ export default function Home() {
           <Image
             priority={true}
             src="/pedra.jpeg"
-            sizes="35vw"
+            sizes="18vw"
             style={{
               width: '100%',
               height: '100%',
@@ -66,7 +66,7 @@ export default function Home() {
           <Image
             priority={true}
             src="/OIG.jpeg"
-            sizes="35vw"
+            sizes="18vw"
             style={{
               width: '100%',
               height: '100%',

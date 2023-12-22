@@ -6,6 +6,7 @@ export default function Home() {
   const valores = ["tesoura", "pedra", "papel"];
   const [escolhaAleatoria, setEscolhaAleatoria] = useState(null);
   const [result, setResult] = useState(null);
+  const [pontos, setPontos] = useState(0);
 
 
   function selecionar(valor) {
@@ -16,16 +17,16 @@ export default function Home() {
       if(escolha === valor){
         setResult(`empate, seu adversario escolheu ${escolha} e você escolheu ${valor}`)
       }
-      else if(escolha === "pedra" && valor === "papel"){
-        setResult(`você Ganhou, seu adversario escolheu ${escolha} e você escolheu ${valor}`)
-      }
-      else if(escolha === "tesoura" && valor === "pedra"){
-        setResult(`você Ganhou, seu adversario escolheu ${escolha} e você escolheu ${valor}`)
-      }
-      else if(escolha === "papel" && valor === "tesoura"){
-        setResult(`você Ganhou, seu adversario escolheu ${escolha} e você escolheu ${valor}`)
+      else if (
+      (escolha === "pedra" && valor === "papel") ||
+      (escolha === "tesoura" && valor === "pedra") ||
+      (escolha === "papel" && valor === "tesoura")) 
+      {
+      setResult(`Você ganhou, seu adversário escolheu ${escolha} e você escolheu ${valor}`);
+      setPontos(pontos + 1); 
       }else{
         setResult(`você perdeu, seu adversario escolheu ${escolha} e você escolheu ${valor}`)
+        setPontos(pontos - 1);
       }
       }
   }
@@ -78,6 +79,7 @@ export default function Home() {
         </button>
       </main>
       <p>Resultado: {result}</p>
+      <p>Pontos: {pontos}</p>
     </>
   );
 }
